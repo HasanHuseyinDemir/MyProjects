@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/gh/HasanHuseyinDemir/VanillaTools/Nodify/Nodify.min-1.02.js"></script>
+    <title>Digital Clock</title>
+</head>
+<body>
+    <h1>Digital Clock</h1>
+
+    <div id="clock"> 
+        <span class="clock" data="clock.hour"></span> :
+        <span class="clock" data="clock.minute"></span> : 
+        <span class="clock" data="clock.second"></span> 
+    </div>
+
+    <script>
+        let clock={
+            hour:0,
+            minute:0,
+            second:0
+        }
+
+        const tick=()=>{
+            let date=new Date();
+            clock.hour=date.getHours();
+            clock.minute=date.getMinutes();
+            clock.second=date.getSeconds();
+        }
+
+        setInterval(()=>{
+            tick();
+            //to update node values
+            nodeValueEqualizer();
+        },1000)
+
+        convertToTextNode(".clock");
+    </script>
+</body>
+</html>
