@@ -18,6 +18,8 @@ let Countdown={
         if(Countdown.active){
             Countdown.actions.tick();
         }
+
+        document.title=`${Countdown.time.hour}:${Countdown.time.minute}:${Countdown.time.second}`;
     },1000),
     actions:{
         reset:()=>{
