@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/gh/HasanHuseyinDemir/VanillaTools/Nodify/Nodify.min-1.02.js"></script>
+    <title>Counter</title>
+</head>
+<body>
+    
+    <div>
+
+        <h1 title="Hasan Hüseyin Demir">Counter</h1>
+        <p class="count">Value : </p>
+        <button onclick="countVal++" class="count">Increase </button>
+        <button onclick="countVal--" class="count">Decrease </button>
+
+    </div>
+
+    <script>
+        let countVal=0;
+        createTextNode(".count","countVal");
+    </script>
+</body>
+</html>
