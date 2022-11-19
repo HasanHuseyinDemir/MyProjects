@@ -20,19 +20,28 @@
         let clock={
             hour:0,
             minute:0,
-            second:0
-        }
-
-        const tick=()=>{
+            second:0,
+            tick:()=>{
             let date=new Date();
             clock.hour=date.getHours();
             clock.minute=date.getMinutes();
             clock.second=date.getSeconds();
+            clock.twoDigits();
+            },
+            twoDigits:()=>{
+                clock.hour<10?clock.hour="0"+clock.hour:""
+                clock.minute<10?clock.minute="0"+clock.minute:""
+                clock.second<10?clock.second="0"+clock.second:""
+            },
+            get start(){
+                this.tick()
+            }
         }
+        clock.tick();
 
         setInterval(()=>{
-            tick();
-            //to update node values
+            clock.start;
+            //to update all node values
             nodeValueEqualizer();
         },1000)
 
