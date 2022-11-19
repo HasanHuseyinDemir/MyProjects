@@ -42,8 +42,6 @@ let Countdown={
             //Hour Minute Second Converter
             Countdown.actions.getTime();
             Countdown.actions.start();
-
-            nodeValueEqualizer();
         },
         convertToHMS:()=>{
             Countdown.time.hour=Math.floor(Countdown.seconds/3600);
