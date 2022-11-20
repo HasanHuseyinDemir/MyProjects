@@ -23,7 +23,7 @@
 
         document.addEventListener("keypress",(keyboard)=>{
             console.log(keyboard.key)
-            switch(keyboard.key){
+            switch(keyboard.key.toLowerCase()){
                 case "a":Audios.kick.play();break;
                 case "s":Audios.hihat.play();break;
                 case "d":Audios.ride.play();break;
