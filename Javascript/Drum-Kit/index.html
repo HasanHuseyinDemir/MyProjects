@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+</head>
+<body>
+
+    <h1>a-Kick</h1>
+    <h1>s-Hihat</h1>
+    <h1>d-Ride</h1>
+    <h1>f-Snare</h1>
+
+    <script>
+        const Audios={
+            kick:new Audio("./Sounds/kick.wav"),
+            hihat:new Audio("./Sounds/hihat.wav"),
+            ride:new Audio("./Sounds/ride.wav"),
+            snare:new Audio("./Sounds/snare.wav")
+        }
+
+        document.addEventListener("keypress",(keyboard)=>{
+            console.log(keyboard.key)
+            switch(keyboard.key){
+                case "a":Audios.kick.play();break;
+                case "s":Audios.hihat.play();break;
+                case "d":Audios.ride.play();break;
+                case "f":Audios.snare.play();break;
+            }
+        })
+    </script>
+</body>
+</html>
