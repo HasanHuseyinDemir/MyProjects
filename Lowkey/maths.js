@@ -1,10 +1,10 @@
 import {convertTemp} from "./Math-modules/convertTemp.js" 
 
-console.log(convertTemp.fahrenheitTo("celcius",50))
+console.log(convertTemp.rankineTo("kelvin",250))
 
 /** || convertTemp || **
 *
-* : Celcius<=>Kelvin<=>Fahrenheit Temperature Converter
+* : Celcius<=>Kelvin<=>Fahrenheit<=>Rankine Temperature Converter
 *
 * ? convertTemp.kelvinTo("celcius",20) 
 * * 20 Kelvin => -253.15 Celcius Returns -253.15
@@ -14,5 +14,8 @@ console.log(convertTemp.fahrenheitTo("celcius",50))
 *
 * ? convertTemp.fahrenheitTo("celcius",50)
 * * 50 Fahrenheit => 10 Celcius Returns 10
+*
+* ? convertTemp.rankineTo("kelvin",250)
+* * 250 Rankine => 138.89 Kelvin
 *
 */
