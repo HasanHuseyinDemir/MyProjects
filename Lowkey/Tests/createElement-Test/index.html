@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateElement Test</title>
+</head>
+<body>
+    
+    <div id="app">
+        <h1>CreateElement Test</h1>
+        <p id="length">Length : </p>
+        <p id="color">Color : </p>
+        <p id="bgColor">Background Color : </p>
+
+    </div>
+
+    <script>
+        let p = document.createElement("p");
+        let input = document.createElement("input");
+        input.oninput=(e)=>{
+            p.textContent=e.target.value;
+            lengthOfString.nodeValue=p.textContent.length;
+        }
+        input.placeholder="Text";
+
+        let colorInput=document.createElement("input")
+        colorInput.type="color"
+        colorInput.oninput=(e)=>{
+            p.style.color=e.target.value;
+            colorOfInput.nodeValue=e.target.value;
+        }
+
+
+        //
+        let BackgroundFragment=document.createDocumentFragment();
+
+        //H1
+        let bgColorTitle=document.createElement("h1");
+        bgColorTitle.align="center";
+        bgColorTitle.textContent="Background Changer";
+        BackgroundFragment.append(bgColorTitle);
+
+
+
+        //Color Input
+        let bgColorInput=document.createElement("input");
+        bgColorInput.type="color";
+        bgColorInput.oninput=(e)=>{
+            document.body.style.backgroundColor=e.target.value;
+            bgColorNode.nodeValue=e.target.value;
+        }
+        BackgroundFragment.append(bgColorInput);
+
+        let bgColorNode=document.createTextNode("");
+        document.getElementById("bgColor").append(bgColorNode);
+        //
+
+
+        let colorOfInput=document.createTextNode("");
+        document.querySelector("#color").append(colorOfInput);
+
+        let lengthOfString=document.createTextNode(p.textContent.length);
+        document.querySelector("#length").append(lengthOfString);
+
+        //paragraph textinput colorInput
+        let fragment=document.createDocumentFragment();
+        fragment.append(p,input,colorInput)
+
+        //All in
+        document.getElementById("app").append(fragment,BackgroundFragment);
+
+
+
+    </script>
+
+</body>
+</html>
